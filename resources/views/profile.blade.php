@@ -1,5 +1,5 @@
-@extends('header')
-@section('profile')
+@extends('main')
+@section('content')
     <section id="profile-box">
         <h2>Profile</h2>
         <img src="img/loggedin.jpg"/>

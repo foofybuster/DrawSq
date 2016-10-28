@@ -1,5 +1,5 @@
-@extends('header')
-@section('login')
+@extends('main')
+@section('content')
     <section id="signin">
         <div class="row">
             <form>

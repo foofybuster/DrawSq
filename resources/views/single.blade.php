@@ -1,5 +1,5 @@
-@extends('header')
-@section('single')
+@extends('main')
+@section('content')
     <section id="single">
         <div class="row">
             <div class="small-12 medium-8 columns">
