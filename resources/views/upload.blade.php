@@ -1,4 +1,4 @@
-@extends('main')
+@extends('header')
 @section('upload')
     <section id="upload">
         <form>

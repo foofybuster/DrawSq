@@ -1,4 +1,4 @@
-@extends('main')
+@extends('header')
 @section('login')
     <section id="signin">
         <div class="row">

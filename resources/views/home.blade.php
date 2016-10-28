@@ -9,7 +9,7 @@
         </div>
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group">
             <div class="column thumb">
-                <a href="onepage.html">
+                <a href="#">
                     <img src="img/art1-thumb.jpg"/>
                     <p>by carrotfern</p>
                 </a>

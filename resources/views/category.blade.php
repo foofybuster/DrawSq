@@ -1,4 +1,4 @@
-@extends('main')
+@extends('header')
 @section('category')
     <section id="timeline">
         <!-- STAFF PICKS -->

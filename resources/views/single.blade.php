@@ -1,4 +1,4 @@
-@extends('main')
+@extends('header')
 @section('single')
     <section id="single">
         <div class="row">

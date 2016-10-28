@@ -1,4 +1,4 @@
-@extends('main')
+@extends('header')
 @section('profile')
     <section id="profile-box">
         <h2>Profile</h2>

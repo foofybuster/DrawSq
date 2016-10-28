@@ -30,7 +30,12 @@
             </div>
         </div>
     </header>
-@yield('home')
+    @yield('home')
+    @yield('category')
+    @yield('upload')
+    @yield('single')
+    @yield('profile')
+    @yield('login')
 @endsection
 
 
