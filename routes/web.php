@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/1', function () {
+Route::get('/', function () {
     return view('layout.home');
 });
 Route::get('/category', function () {
