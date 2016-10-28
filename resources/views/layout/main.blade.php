@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!---
+    @if (Auth::guest())
+        <li><a href="{{ url('/login') }}">Login</a></li>
+        <li><a href="{{ url('/register') }}">Register</a></li>
+    @else
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="{{ url('/logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                </form>
+            </li>
+        </ul>
+    </li>
+    @endif
+            </ul>
+        --->
     <title>Drawsquare</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f25a81">
@@ -22,9 +49,28 @@
                     <li>
                         <button type="button" class="button rounded">UPLOAD</button>
                     </li>
-                    <li class="hide-for-small-only">Hi, zartre</li>
-                    <li><img src="img/loggedin.jpg" class="avatar"></li>
-                </ul>
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login1') }}">Login</a></li>
+                        <li><a href="{{ url('/login1') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                              Hi, {{ Auth::user()->name }} <img src="img/loggedin.jpg" class="avatar"> <span class="caret"></span>
+                            </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                    onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                        </li>
+                    @endif
             </div>
         </div>
         <div class="discover float-center">
