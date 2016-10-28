@@ -1,0 +1,268 @@
+h1,h2,h3,h4,h5,button,form {font-family: "Proxima Nova Bold" !important;}
+
+/* HEADER */
+
+.top-bar, .top-bar ul {
+	background: transparent !important;
+}
+
+.top-bar button {
+	background: #fff;
+	color: #000;
+	margin-right: 15px;
+}
+
+.top-bar .logo {
+	width: 120px;
+	margin-top: 13px;
+}
+
+.top-bar .avatar {
+	width: 40px;
+	margin-left: 15px;
+	border-radius: 20px;
+	border: 2px solid #fff;
+}
+
+header {
+	background: #f25a81;
+	background: -webkit-linear-gradient(top left,#f25a81,#ffa011);
+	background: -o-linear-gradient(top left,#f25a81,#ffa011);
+	background: -moz-linear-gradient(top left,#f25a81,#ffa011);
+	background: linear-gradient(top left, #f25a81, #ffa011);
+	color: #fff;
+	padding: 25px 0 50px;
+}
+
+.discover {
+	margin-top: 50px;
+	width: 712px;
+}
+
+.discover h1 {
+	display: inline-block;
+}
+
+.discover button {
+	display: inline-block;
+	padding: 0 20px;
+	margin-left: 18px;
+	width: 500px;
+	text-align: left;
+	background: #fff;
+	color: #000;
+}
+
+.discover button h1 {
+    margin-bottom: 0;
+}
+
+.discover .dropdown-pane {
+	font-family: "Proxima Nova Bold";
+	width: 500px;
+	border: none;
+	box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+.discover .menu {
+    margin-top: -15px;
+}
+
+/* SECTION - TIMELINE */
+
+section#timeline, section#single, section#upload {
+	margin: 30px 0;
+}
+
+section#timeline a {
+    color: #747474;
+}
+
+section#timeline h2 {
+	margin-bottom: 25px;
+}
+
+section#timeline .thumb img {
+	width: 100%;
+	margin-bottom: 13px;
+	border-radius: 5px;
+	box-shadow: 0 6px 10px rgba(0,0,0,0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+section#timeline .thumb img:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+}
+
+section#timeline .tile-group {
+	margin-bottom: 35px;
+}
+
+section#timeline .tile-group:last-child {
+	margin-bottom: 10px;
+}
+
+/* SECTION - PROFILE */
+
+section#profile-box {
+    width: 100%;
+    max-width: 360px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+section#profile-box p {
+    margin-bottom: 0;
+}
+
+section#profile-box img {
+    width: 120px;
+    border: 4px solid #fff;
+    border-radius: 60px;
+    margin: 4px 0 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+#timeline-profile img {
+    margin-bottom: 20px !important;
+}
+
+/* SECTION - SIGNIN */
+
+section#signin {
+    margin: 45px 0;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+.login-box button {
+	margin-top: 10px;
+}
+
+.login-box button.login {
+	margin-top: 25px;
+}
+
+/* SECTION - SINGLE */
+
+.art-meta {
+    background: #e6e6e6;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 23px 20px 8px;
+    margin-bottom: 20px;
+}
+
+img.single {
+    width: 100%;
+}
+
+/* SECTION - UPLOAD */
+
+.upload-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 350px;
+	background: #e6e6e6;
+	margin: 25px 0;
+}
+
+/* BUTTONS */
+
+button {
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.rounded {
+	border-radius: 5px !important;
+}
+
+button.upload {
+	margin-top: 25px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+	header {
+		padding: 25px 10px 50px;
+	}
+	.discover, .discover button, .discover .dropdown-pane {
+		width: 580px;
+		text-align: center;
+	}
+	.discover h1, .discover button {
+		display: block;
+		margin: 0 auto;
+	}
+    .discover h1 {
+        margin-bottom: 10px;
+    }
+    section#timeline .row {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+	.discover, .discover button, .discover .dropdown-pane {
+		width: 320px;
+	}
+	.top-bar-left {
+		width: auto !important;
+	}
+	.top-bar-right {
+		width: auto !important;
+		float: right;
+	}
+	.top-bar button {
+		margin-right: 2px !important;
+	}
+    .discover .menu li {
+        margin-bottom: 15px;
+    }
+    .discover .menu li:last-child {
+        margin-bottom: 0;
+    }
+    .art-meta {
+        margin-top: 20px;
+    }
+    .login-box {
+        max-width: none;
+    }
+    .login-regis {
+        margin-top: 25px !important;
+    }
+	.upload-box {
+		height: 300px;
+		margin: 10px 0 20px;
+	}
+	button.upload {
+		margin-top: 8px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.discover, .discover button, .discover .dropdown-pane {
+		width: 300px;
+	}
+    .discover button {
+        padding: 8px;
+    }
+    .discover .menu li {
+        margin-bottom: 25px;
+    }
+    .discover .menu li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+	.discover, .discover button, .discover .dropdown-pane {
+		width: 300px;
+	}
+}
