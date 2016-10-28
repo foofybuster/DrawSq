@@ -30,4 +30,7 @@
             </div>
         </div>
     </header>
+@yield('home')
 @endsection
+
+
