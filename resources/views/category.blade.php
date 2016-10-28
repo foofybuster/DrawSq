@@ -1,5 +1,5 @@
-@extends('header')
-@section('category')
+@extends('main')
+@section('content')
     <section id="timeline">
         <!-- STAFF PICKS -->
         <div class="row">

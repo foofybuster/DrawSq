@@ -1,5 +1,5 @@
-@extends('header')
-@section('upload')
+@extends('main')
+@section('content')
     <section id="upload">
         <form>
             <div class="row">
