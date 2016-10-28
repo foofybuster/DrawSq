@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layout.main')
 @section('content')
     <section id="upload">
         <form>
