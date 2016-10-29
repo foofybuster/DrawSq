@@ -34,6 +34,14 @@ header {
 	padding: 25px 0 50px;
 }
 
+header a.nav {
+	color: #fff !important;
+}
+
+header a.nav:hover {
+	color: #e6e6e6 !important;
+}
+
 .discover {
 	margin-top: 50px;
 	width: 712px;
