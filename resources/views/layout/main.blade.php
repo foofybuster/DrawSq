@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Drawsquare</title>
+    <title>{{ $title or "Drawsquare" }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f25a81">
     <link rel="stylesheet" href="https://webfonts.fontstand.com/WF-004772-06c214436396e98a7ca60aed2c2b7cfb.css"
@@ -45,16 +45,19 @@
                                 </li>
                             </ul>
                         </li>
-                @endif
+                    @endif
+                </ul>
             </div>
         </div>
         <div class="discover float-center">
             <h1>Discover</h1>
-            <button class="button" type="button" data-toggle="discover-cats"><h1>something</h1></button>
+            <button class="button" type="button" data-toggle="discover-cats">
+                <h1>{{ $category or 'something'}}</h1>
+            </button>
             <div class="dropdown-pane" id="discover-cats" data-dropdown data-hover="true" data-hover-pane="true">>
                 <ul class="menu vertical">
-                    <li><h2><a href="#">Abstract arts</a></h2></li>
-                    <li><h2><a href="#">Abstract arts</a></h2></li>
+                    <li><h2><a href="abstract-arts">Abstract arts</a></h2></li>
+                    <li><h2><a href="sketches">Noob sketches</a></h2></li>
                     <li><h2><a href="#">Abstract arts</a></h2></li>
                     <li><h2><a href="#">Abstract arts</a></h2></li>
                 </ul>

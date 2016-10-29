@@ -19,6 +19,21 @@ Route::get('/profile', function () {
     return view('layout.profile');
 });
 
+//Route::get('/abstract-arts', 'HomeController@catAbstract');
+//Route::get('/sketches', 'HomeController@catSketch');
+
+Route::get('/abstract-arts', function () {
+    $category = "Abstract arts";
+    $title = $category . " on Drawsquare";
+    return view('layout.category', compact('category', 'title'));
+});
+
+Route::get('/sketches', function () {
+    $category = "Noob sketches";
+    $title = $category . " on Drawsquare";
+    return view('layout.category', compact('category', 'title'));
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
