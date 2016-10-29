@@ -25,12 +25,6 @@ Route::get('/fan-art', 'CatController@catFanart');
 Route::get('/paintings', 'CatController@catPaintings');
 Route::get('/sketches', 'CatController@catSketches');
 
-Route::get('/sketches', function () {
-    $category = "Noob sketches";
-    $title = $category . " on Drawsquare";
-    return view('layout.category', compact('category', 'title'));
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
