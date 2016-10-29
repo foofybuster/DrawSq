@@ -26,14 +26,4 @@ class HomeController extends Controller
         return view('layout.home');
     }
 
-    public function catAbstract() {
-        $category = "Abstract arts";
-        return view('layout.category', compact('category'));
-    }
-
-    public function catSketch() {
-        $category = "Noob sketches";
-        return view('layout.category', compact('category'));
-    }
-
 }

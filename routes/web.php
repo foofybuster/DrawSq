@@ -19,14 +19,11 @@ Route::get('/profile', function () {
     return view('layout.profile');
 });
 
-//Route::get('/abstract-arts', 'HomeController@catAbstract');
-//Route::get('/sketches', 'HomeController@catSketch');
-
-Route::get('/abstract-arts', function () {
-    $category = "Abstract arts";
-    $title = $category . " on Drawsquare";
-    return view('layout.category', compact('category', 'title'));
-});
+Route::get('/abstract-art', 'CatController@catAbstract');
+Route::get('/drawings', 'CatController@catDrawings');
+Route::get('/fan-art', 'CatController@catFanart');
+Route::get('/paintings', 'CatController@catPaintings');
+Route::get('/sketches', 'CatController@catSketches');
 
 Route::get('/sketches', function () {
     $category = "Noob sketches";
