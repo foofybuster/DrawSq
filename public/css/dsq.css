@@ -2,7 +2,7 @@ h1,h2,h3,h4,h5,button,form {font-family: "Proxima Nova Bold" !important;}
 
 /* HEADER */
 
-.top-bar, .top-bar ul {
+.top-bar, .top-bar ul.main-nav {
 	background: transparent !important;
 }
 
@@ -24,6 +24,27 @@ h1,h2,h3,h4,h5,button,form {font-family: "Proxima Nova Bold" !important;}
 	border: 2px solid #fff;
 }
 
+.is-dropdown-submenu {
+	border: none !important;
+	text-align: right;
+	min-width: 104px !important;
+	background: #fff !important;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+	border-radius: 0 0 5px 5px;
+}
+
+.is-dropdown-submenu a {
+	color: #ffa011 !important;
+}
+
+ul.main-nav-drop li {
+	padding-top: 7px;
+}
+
+ul.main-nav-drop li:last-child {
+	padding-bottom: 7px;
+}
+
 header {
 	background: #f25a81;
 	background: -webkit-linear-gradient(top left,#f25a81,#ffa011);
@@ -34,11 +55,11 @@ header {
 	padding: 25px 0 50px;
 }
 
-header a.nav {
+header a.white-nav {
 	color: #fff !important;
 }
 
-header a.nav:hover {
+header a.white-nav:hover {
 	color: #e6e6e6 !important;
 }
 
