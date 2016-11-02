@@ -28,4 +28,4 @@ Route::get('/sketches', 'CatController@catSketches');
 
 Auth::routes();
 
-Route::get('/profile', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
