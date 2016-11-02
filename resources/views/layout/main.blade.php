@@ -18,25 +18,22 @@
                 <a href="/"><img src="img/logo.svg" class="logo" alt="Drawsquare"></a>
             </div>
             <div class="top-bar-right">
-                <ul class="menu">
+                <ul class="dropdown menu main-nav" data-dropdown-menu>
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login1') }}" class="nav">Login or Register</a></li>
+                        <li><a href="{{ url('/login1') }}" class="white-nav">Login or Register</a></li>
                     @else
                         <li>
-                            <button type="button" class="button rounded">UPLOAD</button>
+                            <button type="button" class="button rounded hide-for-small-only">UPLOAD</button>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">
-                                Hi, {{ Auth::user()->name }} <img src="img/loggedin.jpg" class="avatar"> <span
-                                        class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a class="white-nav">Hi, {{ Auth::user()->name }}</a>
+                            <ul class="menu main-nav-drop">
+                                <li class="show-for-small-only"><a class="nav">Upload</a></li>
+                                <li><a href="{{ url('/profile') }}" class="nav">Profile</a></li>
                                 <li>
-                                    <a href="{{ url('/logout') }}"
+                                    <a href="{{ url('/logout') }}" class="nav"
                                        onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();" class="nav">
-                                        Logout
+                                       document.getElementById('logout-form').submit();">Logout
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                                           style="display: none;">
@@ -45,6 +42,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <li><img src="img/loggedin.jpg" class="avatar hide-for-small-only"></li>
                     @endif
                 </ul>
             </div>
