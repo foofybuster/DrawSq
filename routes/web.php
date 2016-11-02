@@ -12,9 +12,6 @@ Route::get('/upload', function () {
 Route::get('/single', function () {
     return view('layout.single');
 });
-Route::get('/login1', function () {
-    return view('layout.login');
-});
 
 Route::get('/profile/{userId?}', function ($userId = null) {
     return view('layout.profile', compact('userId'));
@@ -28,4 +25,4 @@ Route::get('/sketches', 'CatController@catSketches');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/mustlogin', 'HomeController@index');

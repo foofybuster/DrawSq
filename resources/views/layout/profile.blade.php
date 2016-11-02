@@ -10,7 +10,7 @@
     <section id="timeline">
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group" id="timeline-profile">
             <div class="column thumb">
-                <a href="onepage.html">
+                <a href="{{ url('/single') }}">
                     <img src="{{ asset('img/art1-thumb.jpg') }}"/>
                 </a>
             </div>
