@@ -15,8 +15,9 @@ Route::get('/single', function () {
 Route::get('/login1', function () {
     return view('layout.login');
 });
-Route::get('/profile', function () {
-    return view('layout.profile');
+
+Route::get('/profile/{userId?}', function ($userId = null) {
+    return view('layout.profile', compact('userId'));
 });
 
 Route::get('/abstract-art', 'CatController@catAbstract');

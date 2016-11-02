@@ -15,7 +15,7 @@
     <div class="row">
         <div class="top-bar">
             <div class="top-bar-left">
-                <a href="/"><img src="img/logo.svg" class="logo" alt="Drawsquare"></a>
+                <a href="/"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"></a>
             </div>
             <div class="top-bar-right">
                 <ul class="dropdown menu main-nav" data-dropdown-menu>
@@ -42,7 +42,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><img src="img/loggedin.jpg" class="avatar hide-for-small-only"></li>
+                        <li><img src="{{ asset('img/loggedin.jpg') }}" class="avatar hide-for-small-only"></li>
                     @endif
                 </ul>
             </div>
