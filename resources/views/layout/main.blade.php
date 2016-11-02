@@ -23,7 +23,7 @@
                         <li><a href="{{ url('/login1') }}" class="white-nav">Login or Register</a></li>
                     @else
                         <li>
-                            <button type="button" class="button rounded hide-for-small-only">UPLOAD</button>
+                            <a class="button rounded hide-for-small-only" href="upload">UPLOAD</a>
                         </li>
                         <li>
                             <a class="white-nav">Hi, {{ Auth::user()->name }}</a>

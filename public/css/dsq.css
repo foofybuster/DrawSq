@@ -1,4 +1,4 @@
-h1,h2,h3,h4,h5,button,form {font-family: "Proxima Nova Bold" !important;}
+h1,h2,h3,h4,h5,button,a.button,form {font-family: "Proxima Nova Bold" !important;}
 
 /* HEADER */
 
@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,button,form {font-family: "Proxima Nova Bold" !important;}
 	background: transparent !important;
 }
 
-.top-bar button {
+.top-bar a.button {
 	background: #fff;
 	color: #000;
 	margin-right: 15px;
@@ -203,7 +203,7 @@ img.single {
 
 /* BUTTONS */
 
-button {
+button, a.button {
 	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -248,7 +248,7 @@ button.upload {
 		width: auto !important;
 		float: right;
 	}
-	.top-bar button {
+	.top-bar a.button {
 		margin-right: 2px !important;
 	}
     .discover .menu li {
