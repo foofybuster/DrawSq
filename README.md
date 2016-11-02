@@ -17,6 +17,7 @@ This project uses a cutom-built *Foundation 6 for Sites* framework which include
 * Navigation:
   - Menu
   - Title Bar
+  - Dropdown <- new
   - Responsive Menu
   - Top Bar
   - Pagination
