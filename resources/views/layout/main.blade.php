@@ -29,7 +29,7 @@
                             <a class="white-nav">Hi, {{ Auth::user()->name }}</a>
                             <ul class="menu main-nav-drop">
                                 <li class="show-for-small-only"><a class="nav">Upload</a></li>
-                                <li><a href="{{ url('/profile') }}" class="nav">Profile</a></li>
+                                <li><a href="{{ url('/profile/' . Auth::user()->name ) }}" class="nav">Profile</a></li>
                                 <li>
                                     <a href="{{ url('/logout') }}" class="nav"
                                        onclick="event.preventDefault();
