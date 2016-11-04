@@ -28,7 +28,8 @@ Route::post('art-upload', function () {
     } elseif ($cat == "sketches") {
         request()->file('art')->store('arts/sketches');
     }
-    return "Uploaded $artName into $cat.";
+    $uploadError = "Uploaded $artName into $cat.";
+    return view('layout.upload', compact('uploadError'));
 });
 
 Route::get('/abstract-art', 'CatController@catAbstract');

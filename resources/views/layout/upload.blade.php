@@ -8,12 +8,11 @@
                     <h2>Upload a photo</h2>
                     <div class="upload-box">
                         <input type="file" name="art" required/>
-                        <strong>click to choose a photo</strong>
                     </div>
                 </div>
                 <div class="small-12 medium-6 columns">
                     <h3>Give it a title</h3>
-                    <input type="text" placeholder="Birds flying across a blue sky" name="art-name" required>
+                    <input type="text" placeholder="Birds flying across a blue sky" name="art-name" required/>
                 </div>
                 <div class="small-12 medium-6 columns">
                     <h3>Choose a category</h3>
