@@ -6,9 +6,6 @@ Route::get('/', function () {
 Route::get('/category', function () {
     return view('layout.category');
 });
-Route::get('/upload', function () {
-    return view('layout.upload');
-});
 Route::get('/single', function () {
     return view('layout.single');
 });
@@ -43,4 +40,4 @@ Route::get('/sketches', 'CatController@catSketches');
 
 Auth::routes();
 
-Route::get('/mustlogin', 'HomeController@index');
+Route::get('/upload', 'HomeController@index');
