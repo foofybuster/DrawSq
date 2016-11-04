@@ -14,7 +14,7 @@ Route::get('/profile/{userId?}', function ($userId = null) {
     return view('layout.profile', compact('userId'));
 });
 
-Route::post('art-upload', function () {
+Route::post('upload', function () {
     $cat = Request::input('category');
     $artName = Request::input('art-name');
     if ($cat == "abstract-art") {
