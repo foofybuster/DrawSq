@@ -8,7 +8,6 @@
                     <h2>Upload a photo</h2>
                     <div class="upload-box">
                         <input type="file" name="art" required/>
-                        <strong>click to choose a photo</strong>
                     </div>
                 </div>
                 <div class="small-12 medium-6 columns">

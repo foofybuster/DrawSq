@@ -201,6 +201,10 @@ img.single {
 	margin: 25px 0;
 }
 
+.upload-box input {
+	width: 280px;
+}
+
 /* BUTTONS */
 
 button, a.button {
