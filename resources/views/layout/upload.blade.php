@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
     <section id="upload">
-        <form method="POST" action="/art-upload" enctype="multipart/form-data">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="row">
                 <div class="small-12 columns">
