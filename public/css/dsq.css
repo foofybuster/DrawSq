@@ -196,13 +196,20 @@ img.single {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 350px;
+	height: 450px;
 	background: #e6e6e6;
-	margin: 25px 0;
+	margin: 8px 0 25px;
 }
 
-.upload-box input {
-	width: 280px;
+input#art-select {
+	width: 100%;
+	max-width: 350px;
+	margin-top: 20px;
+}
+
+img.art-preview {
+	max-height: 100%;
+	width: auto;
 }
 
 /* BUTTONS */

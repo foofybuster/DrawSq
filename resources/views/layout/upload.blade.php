@@ -6,8 +6,9 @@
             <div class="row">
                 <div class="small-12 columns">
                     <h2>Upload a photo</h2>
+                    <input type="file" name="art" id="art-select" required/>
                     <div class="upload-box">
-                        <input type="file" name="art" required/>
+                        <img class="art-preview" alt="Preview" id="art-preview">
                     </div>
                 </div>
                 <div class="small-12 medium-6 columns">
@@ -32,5 +33,16 @@
                 </div>
             </div>
         </form>
+        <script type="text/javascript">
+            document.getElementById("art-select").onchange = function () {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("art-preview").src = e.target.result;
+                };
+                // read the image file as a data URL.
+                reader.readAsDataURL(this.files[0]);
+            };
+        </script>
     </section>
 @endsection
