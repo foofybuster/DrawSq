@@ -15,6 +15,7 @@ Route::get('profile/{userId?}', function ($userId = null) {
 });
 
 Route::post('upload', 'ArtController@upload');
+Route::get('art/{artId?}', 'ArtController@single');
 
 Route::get('abstract-art', 'CatController@catAbstract');
 Route::get('drawings', 'CatController@catDrawings');

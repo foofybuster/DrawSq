@@ -43,4 +43,18 @@ class ArtController extends Controller
             return view('layout.upload', compact('uploadNotice'));
         }
     }
+    public function single($artId = null)
+    {
+        if ($artId != null) {
+            $artUserId = \DB::table('arts')->where('art_id', $artId)->value('user_id');
+            #$artUserName = \DB::table('users')->where('art_id', $artUserId)->value('name');
+            $artName = \DB::table('arts')->where('art_id', $artId)->value('art_name');
+            $artCat = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
+            $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
+            $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
+            return view('layout.single', compact('artName', 'artCat', 'artEndorse', 'artFile'));
+        } else {
+            return redirect(url('/'));
+        }
+    }
 }
