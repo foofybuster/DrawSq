@@ -36,7 +36,8 @@ Route::post('upload', function () {
         }
         return "Uploaded $artName into $cat as $fileName.";
     } else {
-        return "Invalid file type";
+        $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
+        return view('layout.upload', compact('uploadNotice'));
     }
 });
 

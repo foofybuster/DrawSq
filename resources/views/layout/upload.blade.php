@@ -5,9 +5,10 @@
             {{ csrf_field() }}
             <div class="row">
                 <div class="small-12 columns">
+                    {!! $uploadNotice or null !!}
                     <h2>Upload a photo</h2>
                     <input type="file" name="art" id="art-select" required/>
-                    <label for="art">accepts only PNG and JPG files</label>
+                    <label id="art-select">accepts only PNG and JPG files</label>
                     <div class="upload-box">
                         <img class="art-preview" alt="Preview" id="art-preview">
                     </div>
