@@ -51,6 +51,7 @@ class ArtController extends Controller
             $artCat = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
+            $artPath = $artCat . "/" . $artFile;
             return view('layout.single', compact('artName', 'artCat', 'artEndorse', 'artPath', 'artFile'));
         } else {
             return redirect(url('/'));
