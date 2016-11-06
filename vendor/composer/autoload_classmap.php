@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddVotesToArtsTable' => $baseDir . '/database/migrations/2016_11_06_025521_add_votes_to_arts_table.php',
     'CreateArtsTable' => $baseDir . '/database/migrations/2016_11_04_150803_create_arts_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -535,4 +536,5 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UpdateArtsTable' => $baseDir . '/database/migrations/2016_11_06_024304_update_arts_table.php',
 );

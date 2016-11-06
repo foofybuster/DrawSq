@@ -278,6 +278,7 @@ class ComposerStaticInit7a7b4c152217eee4d2b5a5a33be403ac
     );
 
     public static $classMap = array (
+        'AddVotesToArtsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_025521_add_votes_to_arts_table.php',
         'CreateArtsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_150803_create_arts_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -807,6 +808,7 @@ class ComposerStaticInit7a7b4c152217eee4d2b5a5a33be403ac
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UpdateArtsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_024304_update_arts_table.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
