@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /** CUSTOM */
+    public function arts() {
+        return $this->hasMany(Art::class);
+    }
 }

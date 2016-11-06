@@ -35,7 +35,7 @@ Route::post('upload', function () {
             $artFile->storeAs('arts/' . $cat, $fileName);
         }
         $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
-        return view('layout.upload', compact('uploadNotice', 'artName', 'cat', 'fileName'));
+        return view('layout.upload', compact('uploadNotice'));
     } else {
         $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
         return view('layout.upload', compact('uploadNotice'));
