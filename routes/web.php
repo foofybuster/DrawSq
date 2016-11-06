@@ -15,24 +15,29 @@ Route::get('/profile/{userId?}', function ($userId = null) {
 });
 
 Route::post('upload', function () {
-    $cat = Request::input('category'); # gets the category
-    $artName = Request::input('art-name'); # gets the title
     $artFile = Request::file('art'); # gets the uploaded file
-    $artFileExtension = $artFile->extension(); # gets the file's extension
-    $time = new DateTime(); # gets a date-time to use timestamp
-    $fileName = Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file to idtime.ext
-    if ($cat == "abstract-art") {
-        $artFile->storeAs('arts/abstract-art', $fileName);
-    } elseif ($cat == "drawings") {
-        $artFile->storeAs('arts/drawings', $fileName);
-    } elseif ($cat == "fan-art") {
-        $artFile->storeAs('arts/fan-art', $fileName);
-    } elseif ($cat == "paintings") {
-        $artFile->storeAs('arts/paintings', $fileName);
-    } elseif ($cat == "sketches") {
-        $artFile->storeAs('arts/sketches', $fileName);
+    $artFileExtension = strtolower($artFile->extension()); # gets the file's extension
+    $acceptedFileTypes = ["png", "jpg", "jpeg"];
+    if (in_array($artFileExtension, $acceptedFileTypes)) {
+        $cat = Request::input('category'); # gets the category
+        $artName = Request::input('art-name'); # gets the title
+        $time = new DateTime(); # gets a date-time to use timestamp
+        $fileName = Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
+        if ($cat == "abstract-art") {
+            $artFile->storeAs('arts/abstract-art', $fileName);
+        } elseif ($cat == "drawings") {
+            $artFile->storeAs('arts/drawings', $fileName);
+        } elseif ($cat == "fan-art") {
+            $artFile->storeAs('arts/fan-art', $fileName);
+        } elseif ($cat == "paintings") {
+            $artFile->storeAs('arts/paintings', $fileName);
+        } elseif ($cat == "sketches") {
+            $artFile->storeAs('arts/sketches', $fileName);
+        }
+        return "Uploaded $artName into $cat as $fileName.";
+    } else {
+        return "Invalid file type";
     }
-    return "Uploaded $artName into $cat as $fileName.";
 });
 
 Route::get('/abstract-art', 'CatController@catAbstract');
