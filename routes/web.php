@@ -34,7 +34,8 @@ Route::post('upload', function () {
         } elseif ($cat == "sketches") {
             $artFile->storeAs('arts/sketches', $fileName);
         }
-        return "Uploaded $artName into $cat as $fileName.";
+        $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
+        return view('layout.upload', compact('uploadNotice', 'artName', 'cat', 'fileName'));
     } else {
         $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
         return view('layout.upload', compact('uploadNotice'));
