@@ -3,14 +3,14 @@
 Route::get('/', function () {
     return view('layout.home');
 });
-Route::get('/category', function () {
+Route::get('category', function () {
     return view('layout.category');
 });
-Route::get('/single', function () {
+Route::get('single', function () {
     return view('layout.single');
 });
 
-Route::get('/profile/{userId?}', function ($userId = null) {
+Route::get('profile/{userId?}', function ($userId = null) {
     return view('layout.profile', compact('userId'));
 });
 
@@ -24,15 +24,15 @@ Route::post('upload', function () {
         $time = new DateTime(); # gets a date-time to use timestamp
         $fileName = Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
         if ($cat == "abstract-art") {
-            $artFile->storeAs('arts/abstract-art', $fileName);
+            $artFile->storeAs('arts/' . $cat, $fileName);
         } elseif ($cat == "drawings") {
-            $artFile->storeAs('arts/drawings', $fileName);
+            $artFile->storeAs('arts/' . $cat, $fileName);
         } elseif ($cat == "fan-art") {
-            $artFile->storeAs('arts/fan-art', $fileName);
+            $artFile->storeAs('arts/' . $cat, $fileName);
         } elseif ($cat == "paintings") {
-            $artFile->storeAs('arts/paintings', $fileName);
+            $artFile->storeAs('arts/' . $cat, $fileName);
         } elseif ($cat == "sketches") {
-            $artFile->storeAs('arts/sketches', $fileName);
+            $artFile->storeAs('arts/' . $cat, $fileName);
         }
         $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
         return view('layout.upload', compact('uploadNotice', 'artName', 'cat', 'fileName'));
@@ -42,12 +42,12 @@ Route::post('upload', function () {
     }
 });
 
-Route::get('/abstract-art', 'CatController@catAbstract');
-Route::get('/drawings', 'CatController@catDrawings');
-Route::get('/fan-art', 'CatController@catFanart');
-Route::get('/paintings', 'CatController@catPaintings');
-Route::get('/sketches', 'CatController@catSketches');
+Route::get('abstract-art', 'CatController@catAbstract');
+Route::get('drawings', 'CatController@catDrawings');
+Route::get('fan-art', 'CatController@catFanart');
+Route::get('paintings', 'CatController@catPaintings');
+Route::get('sketches', 'CatController@catSketches');
 
 Auth::routes();
 
-Route::get('/upload', 'HomeController@index');
+Route::get('upload', 'HomeController@index');
