@@ -32,7 +32,9 @@ class ArtController extends Controller
             $filePath = "arts/" . $cat . "/" . $fileName;
             $request->user()->arts()->create([
                 'art_file' => $filePath,
-                'art_name' => $artName
+                'art_name' => $artName,
+                'art_cat' => $cat,
+                'art_endorse' => 1
             ]);
 
             $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
