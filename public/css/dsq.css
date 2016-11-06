@@ -230,6 +230,11 @@ img.art-preview {
 	color: #fff;
 }
 
+.callout.success {
+	background: #00bb00;
+	color: #fff;
+}
+
 /* BUTTONS */
 
 button, a.button {

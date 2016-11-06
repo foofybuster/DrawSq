@@ -15,27 +15,27 @@
     <div class="row">
         <div class="top-bar">
             <div class="top-bar-left">
-                <a href="/"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"></a>
             </div>
             <div class="top-bar-right">
                 <ul class="dropdown menu main-nav" data-dropdown-menu>
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" class="white-nav">Login or Register</a></li>
+                        <li><a href="{{ url('login') }}" class="white-nav">Login or Register</a></li>
                     @else
                         <li>
-                            <a class="button rounded hide-for-small-only" href="upload">UPLOAD</a>
+                            <a class="button rounded hide-for-small-only" href="{{ url('upload') }}">UPLOAD</a>
                         </li>
                         <li>
                             <a class="white-nav">Hi, {{ Auth::user()->name }}</a>
                             <ul class="menu main-nav-drop">
-                                <li class="show-for-small-only"><a class="nav">Upload</a></li>
-                                <li><a href="{{ url('/profile/' . Auth::user()->name ) }}" class="nav">Profile</a></li>
+                                <li class="show-for-small-only"><a class="nav" href="{{ url('upload') }}">Upload</a></li>
+                                <li><a href="{{ url('profile/' . Auth::user()->name ) }}" class="nav">Profile</a></li>
                                 <li>
-                                    <a href="{{ url('/logout') }}" class="nav"
+                                    <a href="{{ url('logout') }}" class="nav"
                                        onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">Logout
                                     </a>
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                                    <form id="logout-form" action="{{ url('logout') }}" method="POST"
                                           style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
