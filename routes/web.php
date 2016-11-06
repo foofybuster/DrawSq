@@ -15,10 +15,12 @@ Route::get('/profile/{userId?}', function ($userId = null) {
 });
 
 Route::post('upload', function () {
-    $cat = Request::input('category');
-    $artName = Request::input('art-name');
-    $artFile = Request::file('art');
-    $timestamp = new DateTime();
+    $cat = Request::input('category'); # gets the category
+    $artName = Request::input('art-name'); # gets the title
+    $artFile = Request::file('art'); # gets the uploaded file
+    $artFileExtension = $artFile->extension(); # gets the file's extension
+    $time = new DateTime(); # gets a date-time to use timestamp
+    $fileName = Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file to idtime.ext
     if ($cat == "abstract-art") {
         $artFile->storeAs('arts/abstract-art', $fileName);
     } elseif ($cat == "drawings") {
