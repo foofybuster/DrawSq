@@ -28,6 +28,13 @@ class ArtController extends Controller
             } elseif ($cat == "sketches") {
                 $artFile->storeAs('arts/' . $cat, $fileName);
             }
+
+            $filePath = "arts/" . $cat . "/" . $fileName;
+            $request->user()->arts()->create([
+                'art_file' => $filePath,
+                'art_name' => $artName
+            ]);
+
             $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
             return view('layout.upload', compact('uploadNotice'));
         } else {

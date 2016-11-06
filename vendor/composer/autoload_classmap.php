@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDefaultValueToArtendorse' => $baseDir . '/database/migrations/2016_11_06_103441_add_default_value_to_artendorse.php',
     'AddVotesToArtsTable' => $baseDir . '/database/migrations/2016_11_06_025521_add_votes_to_arts_table.php',
     'CreateArtsTable' => $baseDir . '/database/migrations/2016_11_04_150803_create_arts_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
