@@ -17,18 +17,20 @@ Route::get('/profile/{userId?}', function ($userId = null) {
 Route::post('upload', function () {
     $cat = Request::input('category');
     $artName = Request::input('art-name');
+    $timestamp = new DateTime();
+    $fileName = Auth::user()->id . $timestamp->getTimestamp() . ".jpg";
     if ($cat == "abstract-art") {
-        request()->file('art')->store('arts/abstract-art');
+        request()->file('art')->storeAs('arts/abstract-art', $fileName);
     } elseif ($cat == "drawings") {
-        request()->file('art')->store('arts/drawings');
+        request()->file('art')->storeAs('arts/drawings', $fileName);
     } elseif ($cat == "fan-art") {
-        request()->file('art')->store('arts/fan-art');
+        request()->file('art')->storeAs('arts/fan-art', $fileName);
     } elseif ($cat == "paintings") {
-        request()->file('art')->store('arts/paintings');
+        request()->file('art')->storeAs('arts/paintings', $fileName);
     } elseif ($cat == "sketches") {
-        request()->file('art')->store('arts/sketches');
+        request()->file('art')->storeAs('arts/sketches', $fileName);
     }
-    return "Uploaded $artName into $cat.";
+    return "Uploaded $artName into $cat as $fileName.";
 });
 
 Route::get('/abstract-art', 'CatController@catAbstract');
