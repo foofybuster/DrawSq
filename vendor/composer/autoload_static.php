@@ -278,6 +278,7 @@ class ComposerStaticInit7a7b4c152217eee4d2b5a5a33be403ac
     );
 
     public static $classMap = array (
+        'AddDefaultValueToArtendorse' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_103441_add_default_value_to_artendorse.php',
         'AddVotesToArtsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_06_025521_add_votes_to_arts_table.php',
         'CreateArtsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_04_150803_create_arts_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
