@@ -204,12 +204,30 @@ img.single {
 input#art-select {
 	width: 100%;
 	max-width: 350px;
-	margin-top: 20px;
+	margin: 20px 0 5px;
+}
+
+label#art-select {
+	color: #707070;
+	font-family: -apple-system, Roboto;
 }
 
 img.art-preview {
 	max-height: 100%;
 	width: auto;
+}
+
+/* CALLOUT */
+
+.callout {
+	margin: 10px 0 30px;
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.callout.alert {
+	background: red;
+	color: #fff;
 }
 
 /* BUTTONS */
