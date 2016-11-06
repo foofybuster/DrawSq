@@ -18,20 +18,19 @@ class ArtController extends Controller
             $time = new \DateTime(); # gets a date-time to use timestamp
             $fileName = \Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
             if ($cat == "abstract-art") {
-                $artFile->storeAs('arts/' . $cat, $fileName);
+                $artFile->storeAs('public/arts/' . $cat, $fileName);
             } elseif ($cat == "drawings") {
-                $artFile->storeAs('arts/' . $cat, $fileName);
+                $artFile->storeAs('public/arts/' . $cat, $fileName);
             } elseif ($cat == "fan-art") {
-                $artFile->storeAs('arts/' . $cat, $fileName);
+                $artFile->storeAs('public/arts/' . $cat, $fileName);
             } elseif ($cat == "paintings") {
-                $artFile->storeAs('arts/' . $cat, $fileName);
+                $artFile->storeAs('public/arts/' . $cat, $fileName);
             } elseif ($cat == "sketches") {
-                $artFile->storeAs('arts/' . $cat, $fileName);
+                $artFile->storeAs('public/arts/' . $cat, $fileName);
             }
 
-            $filePath = "arts/" . $cat . "/" . $fileName;
             $request->user()->arts()->create([
-                'art_file' => $filePath,
+                'art_file' => $fileName,
                 'art_name' => $artName,
                 'art_cat' => $cat
             ]);
@@ -52,7 +51,7 @@ class ArtController extends Controller
             $artCat = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
-            return view('layout.single', compact('artName', 'artCat', 'artEndorse', 'artFile'));
+            return view('layout.single', compact('artName', 'artCat', 'artEndorse', 'artPath', 'artFile'));
         } else {
             return redirect(url('/'));
         }
