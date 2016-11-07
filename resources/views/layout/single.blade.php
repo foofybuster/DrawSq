@@ -4,7 +4,7 @@
         <div class="row">
             <div class="small-12 medium-8 columns">
                 <h2>{{ $artName }}</h2>
-                <img src="" class="single"/>
+                <img src="{{ $artPath }}" class="single"/>
             </div>
             <div class="small-12 medium-4 columns">
                 <div class="art-meta">
