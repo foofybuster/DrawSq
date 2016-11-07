@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ArtController extends Controller
 {
@@ -52,7 +53,7 @@ class ArtController extends Controller
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artCreated = \DB::table('arts')->where('art_id', $artId)->value('created_at');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
-            $artPath = $artCatUri . "/" . $artFile;
+            $artPath = \Storage::url('arts/' . $artCatUri . "/" . $artFile);
             if ($artCatUri == "abstract-art") {
                 $artCatName = "Abstract art";
             } elseif ($artCatUri == "drawings") {

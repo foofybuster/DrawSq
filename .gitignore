@@ -13,3 +13,5 @@ Homestead.yaml
 config/database.php
 
 .env
+
+storage/app/public/.DS_Store
