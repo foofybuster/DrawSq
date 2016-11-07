@@ -7,38 +7,21 @@ use App\Http\Controllers\Controller;
 
 class CatController extends Controller
 {
-    public function catAbstract()
-    {
-        $category = "Abstract art";
+    public function catSelect($catUri = null) {
+        if ($catUri == "abstract-art") {
+            $category = "Abstract art";
+        } elseif ($catUri == "drawings") {
+            $category = "Drawings";
+        } elseif ($catUri == "fan-art") {
+            $category = "Fan art";
+        } elseif ($catUri == "paintings") {
+            $category = "Paintings";
+        } elseif ($catUri == "sketches") {
+            $category = "Sketches";
+        } else {
+            return redirect(url('/'));
+        }
         $title = $category . " on Drawsquare";
-        return view('layout.category', compact('category', 'title'));
-    }
-
-    public function catDrawings()
-    {
-        $category = "Drawings";
-        $title = $category . " on Drawsquare";
-        return view('layout.category', compact('category', 'title'));
-    }
-
-    public function catFanart()
-    {
-        $category = "Fan art";
-        $title = $category . " on Drawsquare";
-        return view('layout.category', compact('category', 'title'));
-    }
-
-    public function catPaintings()
-    {
-        $category = "Paintings";
-        $title = $category . " on Drawsquare";
-        return view('layout.category', compact('category', 'title'));
-    }
-
-    public function catSketches()
-    {
-        $category = "Sketches";
-        $title = $category . " on Drawsquare";
-        return view('layout.category', compact('category', 'title'));
+        return view('layout.category', compact('title', 'category'));
     }
 }
