@@ -79,7 +79,8 @@ class ArtController extends Controller
             $arts = \DB::table('arts')->where('user_id', Request::user()->id)->get();
             $dateJoined = \DB::table('users')->where('id', Request::user()->id)->value('created_at');
             $yearJoined = substr($dateJoined, 0, 4);
-            return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined'));
+            $endorse = \DB::table('users')->where('id', Request::user()->id)->value('endorse');
+            return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
         } else {
             $userId = \DB::table('users')->where('name', $username)->value('id');
             if ($userId == null) {
@@ -89,7 +90,8 @@ class ArtController extends Controller
                 $arts = \DB::table('arts')->where('user_id', $userId)->get();
                 $dateJoined = \DB::table('users')->where('id', $userId)->value('created_at');
                 $yearJoined = substr($dateJoined, 0, 4);
-                return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined'));
+                $endorse = \DB::table('users')->where('id', $userId)->value('endorse');
+                return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
             }
         }
     }
