@@ -35,9 +35,10 @@ class ArtController extends Controller
                 'art_name' => $artName,
                 'art_cat' => $cat
             ]);
+            
+            $artId = \DB::table('arts')->where('art_file', $fileName)->value('art_id');
+            return redirect(url('art/' . $artId));
 
-            $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
-            return view('layout.upload', compact('uploadNotice'));
         } else {
             $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
             return view('layout.upload', compact('uploadNotice'));
