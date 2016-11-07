@@ -70,4 +70,9 @@ class ArtController extends Controller
             return redirect(url('/'));
         }
     }
+    public function profileArt(Request $request)
+    {
+        $arts = \DB::table('arts')->where('user_id', $request->user()->id)->get();
+        return view('layout.profile', compact('arts'));
+    }
 }
