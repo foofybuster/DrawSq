@@ -67,6 +67,7 @@ class ArtController extends Controller
                 $artCatName = "Sketches";
             }
             $title = $artName . " | Drawsquare";
+            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'title'));
         } else {
             return redirect(url('/'));
         }
