@@ -10,9 +10,11 @@ Route::get('single', function () {
     return view('layout.single');
 });
 
-Route::get('profile/{userId?}', function ($userId = null) {
+/** Route::get('profile/{userId?}', function ($userId = null) {
     return view('layout.profile', compact('userId'));
-});
+}); */
+
+Route::get('profile/{username?}', 'ArtController@profileArt');
 
 Route::post('upload', 'ArtController@upload');
 Route::get('art/{artId?}', 'ArtController@single');

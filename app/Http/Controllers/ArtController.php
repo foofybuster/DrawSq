@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ArtController extends Controller
 {
-    public function upload(Request $request)
+    public function upload()
     {
-        $artFile = $request->file('art'); # gets the uploaded file
+        $artFile = Request::file('art'); # gets the uploaded file
         $artFileExtension = strtolower($artFile->extension()); # gets the file's extension
         $acceptedFileTypes = ["png", "jpg", "jpeg"];
         if (in_array($artFileExtension, $acceptedFileTypes)) {
-            $cat = $request->input('category'); # gets the category
-            $artName = $request->input('art-name'); # gets the title
+            $cat = Request::input('category'); # gets the category
+            $artName = Request::input('art-name'); # gets the title
             $time = new \DateTime(); # gets a date-time to use timestamp
             $fileName = \Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
             if ($cat == "abstract-art") {
@@ -29,14 +30,15 @@ class ArtController extends Controller
                 $artFile->storeAs('public/arts/' . $cat, $fileName);
             }
 
-            $request->user()->arts()->create([
+            Request::user()->arts()->create([
                 'art_file' => $fileName,
                 'art_name' => $artName,
                 'art_cat' => $cat
             ]);
 
-            $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
-            return view('layout.upload', compact('uploadNotice'));
+            $artId = \DB::table('arts')->where('art_file', $fileName)->value('art_id');
+            return redirect(url('art/' . $artId));
+
         } else {
             $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
             return view('layout.upload', compact('uploadNotice'));
@@ -52,7 +54,7 @@ class ArtController extends Controller
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artCreated = \DB::table('arts')->where('art_id', $artId)->value('created_at');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
-            $artPath = $artCatUri . "/" . $artFile;
+            $artPath = \Storage::url('arts/' . $artCatUri . "/" . $artFile);
             if ($artCatUri == "abstract-art") {
                 $artCatName = "Abstract art";
             } elseif ($artCatUri == "drawings") {
@@ -64,9 +66,33 @@ class ArtController extends Controller
             } elseif ($artCatUri == "sketches") {
                 $artCatName = "Sketches";
             }
-            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artFile', 'artCreated'));
+            $title = $artName . " | Drawsquare";
+            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'title'));
         } else {
             return redirect(url('/'));
+        }
+    }
+    public function profileArt($username = null)
+    {
+        if ($username == null) {
+            $nameOfUser = Request::user()->name;
+            $arts = \DB::table('arts')->where('user_id', Request::user()->id)->get();
+            $dateJoined = \DB::table('users')->where('id', Request::user()->id)->value('created_at');
+            $yearJoined = substr($dateJoined, 0, 4);
+            $endorse = \DB::table('users')->where('id', Request::user()->id)->value('endorse');
+            return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
+        } else {
+            $userId = \DB::table('users')->where('name', $username)->value('id');
+            if ($userId == null) {
+                return "User not found";
+            } else {
+                $nameOfUser = \DB::table('users')->where('id', $userId)->value('name');
+                $arts = \DB::table('arts')->where('user_id', $userId)->get();
+                $dateJoined = \DB::table('users')->where('id', $userId)->value('created_at');
+                $yearJoined = substr($dateJoined, 0, 4);
+                $endorse = \DB::table('users')->where('id', $userId)->value('endorse');
+                return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
+            }
         }
     }
 }
