@@ -46,13 +46,13 @@ class ArtController extends Controller
     {
         if ($artId != null) {
             $artUserId = \DB::table('arts')->where('art_id', $artId)->value('user_id');
-            #$artUserName = \DB::table('users')->where('art_id', $artUserId)->value('name');
+            $artUserName = \DB::table('users')->where('id', $artUserId)->value('name');
             $artName = \DB::table('arts')->where('art_id', $artId)->value('art_name');
             $artCat = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
             $artPath = $artCat . "/" . $artFile;
-            return view('layout.single', compact('artName', 'artCat', 'artEndorse', 'artPath', 'artFile'));
+            return view('layout.single', compact('artUserName', 'artName', 'artCat', 'artEndorse', 'artPath', 'artFile'));
         } else {
             return redirect(url('/'));
         }

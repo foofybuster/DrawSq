@@ -8,7 +8,7 @@
             </div>
             <div class="small-12 medium-4 columns">
                 <div class="art-meta">
-                    <h5>by <a href="{{ url('profile/') }}">null</a></h5>
+                    <h5>by <a href="{{ url('profile/' . $artUserName) }}">{{ $artUserName }}</a></h5>
                     <ul>
                         <li>Oct 18, 2016</li>
                         <li>{{ $artCat }}</li>
