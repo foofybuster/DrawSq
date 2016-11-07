@@ -12,7 +12,7 @@
                 <div class="column thumb">
                     <a href="{{ url('art/' . $art->art_id) }}">
                         <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
-                        <p>by {{ $art->user_id }}</p>
+                        <p>by {{ $art->user->name }}</p>
                     </a>
                 </div>
             @endforeach
