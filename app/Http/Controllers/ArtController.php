@@ -35,7 +35,7 @@ class ArtController extends Controller
                 'art_name' => $artName,
                 'art_cat' => $cat
             ]);
-            
+
             $artId = \DB::table('arts')->where('art_file', $fileName)->value('art_id');
             return redirect(url('art/' . $artId));
 
@@ -66,7 +66,7 @@ class ArtController extends Controller
             } elseif ($artCatUri == "sketches") {
                 $artCatName = "Sketches";
             }
-            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artFile', 'artCreated'));
+            $title = $artName . " | Drawsquare";
         } else {
             return redirect(url('/'));
         }
