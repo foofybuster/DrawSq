@@ -48,11 +48,23 @@ class ArtController extends Controller
             $artUserId = \DB::table('arts')->where('art_id', $artId)->value('user_id');
             $artUserName = \DB::table('users')->where('id', $artUserId)->value('name');
             $artName = \DB::table('arts')->where('art_id', $artId)->value('art_name');
-            $artCat = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
+            $artCatUri = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
+            $artCreated = \DB::table('arts')->where('art_id', $artId)->value('created_at');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
-            $artPath = $artCat . "/" . $artFile;
-            return view('layout.single', compact('artUserName', 'artName', 'artCat', 'artEndorse', 'artPath', 'artFile'));
+            $artPath = $artCatUri . "/" . $artFile;
+            if ($artCatUri == "abstract-art") {
+                $artCatName = "Abstract art";
+            } elseif ($artCatUri == "drawings") {
+                $artCatName = "Drawings";
+            } elseif ($artCatUri == "fan-art") {
+                $artCatName = "Fan art";
+            } elseif ($artCatUri == "paintings") {
+                $artCatName = "Paintings";
+            } elseif ($artCatUri == "sketches") {
+                $artCatName = "Sketches";
+            }
+            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artFile', 'artCreated'));
         } else {
             return redirect(url('/'));
         }

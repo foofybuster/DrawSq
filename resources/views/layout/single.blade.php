@@ -10,8 +10,8 @@
                 <div class="art-meta">
                     <h5>by <a href="{{ url('profile/' . $artUserName) }}">{{ $artUserName }}</a></h5>
                     <ul>
-                        <li>Oct 18, 2016</li>
-                        <li>{{ $artCat }}</li>
+                        <li>{{ $artCreated }}</li>
+                        <li><a href="{{ url($artCatUri) }}">{{ $artCatName }}</a></li>
                         <li>{{ $artEndorse }} endorsements</li>
                     </ul>
                 </div>
