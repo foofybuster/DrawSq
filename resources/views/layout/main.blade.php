@@ -54,11 +54,11 @@
             </button>
             <div class="dropdown-pane" id="discover-cats" data-dropdown data-hover="true" data-hover-pane="true">>
                 <ul class="menu vertical">
-                    <li><h2><a href="{{ url('abstract-art') }}">Abstract art</a></h2></li>
-                    <li><h2><a href="{{ url('drawings') }}">Drawings</a></h2></li>
-                    <li><h2><a href="{{ url('fan-art') }}">Fan art</a></h2></li>
-                    <li><h2><a href="{{ url('paintings') }}">Paintings</a></h2></li>
-                    <li><h2><a href="{{ url('sketches') }}">Sketches</a></h2></li>
+                    <li><h2><a href="{{ url('discover/abstract-art') }}">Abstract art</a></h2></li>
+                    <li><h2><a href="{{ url('discover/drawings') }}">Drawings</a></h2></li>
+                    <li><h2><a href="{{ url('discover/fan-art') }}">Fan art</a></h2></li>
+                    <li><h2><a href="{{ url('discover/paintings') }}">Paintings</a></h2></li>
+                    <li><h2><a href="{{ url('discover/sketches') }}">Sketches</a></h2></li>
                 </ul>
             </div>
         </div>
