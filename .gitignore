@@ -9,3 +9,7 @@ Homestead.yaml
 .env
 .env
 *.env
+
+config/database.php
+
+.env
