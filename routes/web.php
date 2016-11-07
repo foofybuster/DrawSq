@@ -14,7 +14,7 @@ Route::get('single', function () {
     return view('layout.profile', compact('userId'));
 }); */
 
-Route::get('profile', 'ArtController@profileArt');
+Route::get('profile/{username?}', 'ArtController@profileArt');
 
 Route::post('upload', 'ArtController@upload');
 Route::get('art/{artId?}', 'ArtController@single');
