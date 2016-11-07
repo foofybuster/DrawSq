@@ -36,8 +36,9 @@ class ArtController extends Controller
                 'art_cat' => $cat
             ]);
 
-            $uploadNotice = '<div class="callout success">Successfully uploaded your photo</div>';
-            return view('layout.upload', compact('uploadNotice'));
+            $artId = \DB::table('arts')->where('art_file', $fileName)->value('art_id');
+            return redirect(url('art/' . $artId));
+
         } else {
             $uploadNotice = '<div class="callout alert">The uploaded photo was not a PNG or JPG file.</div>';
             return view('layout.upload', compact('uploadNotice'));
@@ -65,7 +66,8 @@ class ArtController extends Controller
             } elseif ($artCatUri == "sketches") {
                 $artCatName = "Sketches";
             }
-            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artFile', 'artCreated'));
+            $title = $artName . " | Drawsquare";
+            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'title'));
         } else {
             return redirect(url('/'));
         }
