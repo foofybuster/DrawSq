@@ -11,7 +11,7 @@
                     <h5>by <a href="{{ url('profile/' . $artUserName) }}">{{ $artUserName }}</a></h5>
                     <ul>
                         <li>{{ $artCreated }}</li>
-                        <li><a href="{{ url($artCatUri) }}">{{ $artCatName }}</a></li>
+                        <li><a href="{{ url('discover/' . $artCatUri) }}">{{ $artCatName }}</a></li>
                         @if ($artEndorse < 2)
                             <li>{{ $artEndorse }} endorsement</li>
                         @else

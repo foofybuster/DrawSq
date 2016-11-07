@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class ArtController extends Controller
 {
-    public function upload(Request $request)
+    public function upload()
     {
-        $artFile = $request->file('art'); # gets the uploaded file
+        $artFile = Request::file('art'); # gets the uploaded file
         $artFileExtension = strtolower($artFile->extension()); # gets the file's extension
         $acceptedFileTypes = ["png", "jpg", "jpeg"];
         if (in_array($artFileExtension, $acceptedFileTypes)) {
-            $cat = $request->input('category'); # gets the category
-            $artName = $request->input('art-name'); # gets the title
+            $cat = Request::input('category'); # gets the category
+            $artName = Request::input('art-name'); # gets the title
             $time = new \DateTime(); # gets a date-time to use timestamp
             $fileName = \Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
             if ($cat == "abstract-art") {
@@ -30,7 +30,7 @@ class ArtController extends Controller
                 $artFile->storeAs('public/arts/' . $cat, $fileName);
             }
 
-            $request->user()->arts()->create([
+            Request::user()->arts()->create([
                 'art_file' => $fileName,
                 'art_name' => $artName,
                 'art_cat' => $cat
@@ -70,6 +70,27 @@ class ArtController extends Controller
             return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'title'));
         } else {
             return redirect(url('/'));
+        }
+    }
+    public function profileArt($username = null)
+    {
+        if ($username == null) {
+            $nameOfUser = Request::user()->name;
+            $arts = \DB::table('arts')->where('user_id', Request::user()->id)->get();
+            $dateJoined = \DB::table('users')->where('id', Request::user()->id)->value('created_at');
+            $yearJoined = substr($dateJoined, 0, 4);
+            return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined'));
+        } else {
+            $userId = \DB::table('users')->where('name', $username)->value('id');
+            if ($userId == null) {
+                return "User not found";
+            } else {
+                $nameOfUser = \DB::table('users')->where('id', $userId)->value('name');
+                $arts = \DB::table('arts')->where('user_id', $userId)->get();
+                $dateJoined = \DB::table('users')->where('id', $userId)->value('created_at');
+                $yearJoined = substr($dateJoined, 0, 4);
+                return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined'));
+            }
         }
     }
 }
