@@ -95,4 +95,9 @@ class ArtController extends Controller
             }
         }
     }
+    public function homeArt()
+    {
+        $newPieces = \DB::table('arts')->get();
+        return view('layout.home', compact('newPieces'));
+    }
 }
