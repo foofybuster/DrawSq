@@ -13,7 +13,7 @@
     </section>
     <section id="timeline">
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group" id="timeline-profile">
-            @foreach ($arts as $art)
+            @foreach ($arts->reverse() as $art)
                 <div class="column thumb">
                     <a href="{{ url('/art/' . $art->art_id) }}">
                         <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
