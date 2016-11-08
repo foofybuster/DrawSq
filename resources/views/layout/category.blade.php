@@ -12,8 +12,8 @@
                 <div class="column thumb">
                     <a href="{{ url('art/' . $art->art_id) }}">
                         <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
-                        <p>by {{ $art->user->name }}</p>
                     </a>
+                    <p>by <a href="{{ url('profile/' . $art->user->name) }}">{{ $art->user->name }}</a></p>
                 </div>
             @endforeach
         </div>
