@@ -15,7 +15,7 @@
     <div class="row">
         <div class="top-bar">
             <div class="top-bar-left">
-                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"/></a>
             </div>
             <div class="top-bar-right">
                 <ul class="dropdown menu main-nav" data-dropdown-menu>
@@ -67,6 +67,16 @@
 
 @yield('content')
 
+<footer>
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <img src="{{ asset('img/logo.svg') }}" class="footer-logo" alt="Drawsquare"/>
+        </div>
+        <div class="small-12 medium-6 columns">
+            <p>made with ❤︎ and Laravel</p>
+        </div>
+    </div>
+</footer>
 <script src={{ asset("js/vendor/jquery.js") }} type="text/javascript"></script>
 <script src={{ asset("js/vendor/what-input.js") }} type="text/javascript"></script>
 <script src={{ asset("js/vendor/foundation.min.js") }} type="text/javascript"></script>
