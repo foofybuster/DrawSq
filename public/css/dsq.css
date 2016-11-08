@@ -284,6 +284,26 @@ button.upload {
 	margin-top: 25px;
 }
 
+a.share-btn img {
+	height: 20px;
+}
+
+a.share-fb, a.share-fb:visited {
+	background: #3b5998;
+}
+
+a.share-fb:hover, a.share-fb:focus {
+	background: #204186;
+}
+
+a.share-tw, a.share-tw:visited {
+	background: #00aced;
+}
+
+a.share-tw:hover, a.share-tw:focus {
+	background: #009bd6;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
