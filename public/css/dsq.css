@@ -195,6 +195,11 @@ section#signin {
 
 img.single {
     width: 100%;
+	margin-top: 7px;
+}
+
+p.art-desc {
+	margin: 20px 0 0;
 }
 
 /* SECTION - UPLOAD */

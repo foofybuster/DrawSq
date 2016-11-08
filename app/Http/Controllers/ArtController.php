@@ -17,6 +17,7 @@ class ArtController extends Controller
         if (in_array($artFileExtension, $acceptedFileTypes)) {
             $cat = Request::input('category'); # gets the category
             $artName = Request::input('art-name'); # gets the title
+            $artDesc = Request::input('art-desc'); # gets the description
             $time = new \DateTime(); # gets a date-time to use timestamp
             $fileName = \Auth::user()->id . $time->getTimestamp() . "." . $artFileExtension; # renames the file
             if ($cat == "abstract-art") {
@@ -34,7 +35,8 @@ class ArtController extends Controller
             Request::user()->arts()->create([
                 'art_file' => $fileName,
                 'art_name' => $artName,
-                'art_cat' => $cat
+                'art_cat' => $cat,
+                'art_desc' => $artDesc
             ]);
 
             $artId = \DB::table('arts')->where('art_file', $fileName)->value('art_id');
@@ -45,6 +47,7 @@ class ArtController extends Controller
             return view('layout.upload', compact('uploadNotice'));
         }
     }
+
     public function single($artId = null)
     {
         if ($artId != null) {
@@ -52,6 +55,7 @@ class ArtController extends Controller
             $artUserName = \DB::table('users')->where('id', $artUserId)->value('name');
             $artName = \DB::table('arts')->where('art_id', $artId)->value('art_name');
             $artCatUri = \DB::table('arts')->where('art_id', $artId)->value('art_cat');
+            $artDesc = \DB::table('arts')->where('art_id', $artId)->value('art_desc');
             $artEndorse = \DB::table('arts')->where('art_id', $artId)->value('art_endorse');
             $artCreated = \DB::table('arts')->where('art_id', $artId)->value('created_at');
             $artFile = \DB::table('arts')->where('art_id', $artId)->value('art_file');
@@ -68,11 +72,12 @@ class ArtController extends Controller
                 $artCatName = "Sketches";
             }
             $title = $artName . " | Drawsquare";
-            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'title'));
+            return view('layout.single', compact('artUserName', 'artName', 'artCatUri', 'artCatName', 'artEndorse', 'artPath', 'artCreated', 'artDesc', 'title'));
         } else {
             return redirect(url('/'));
         }
     }
+
     public function profileArt($username = null)
     {
         if ($username == null) {
@@ -96,9 +101,10 @@ class ArtController extends Controller
             }
         }
     }
+
     public function homeArt()
     {
-        $selected = [1,2,3,4]; # selected art_id
+        $selected = [1, 2, 3, 4]; # selected art_id
         $staffPicks = Art::whereIn('art_id', $selected)->get();
         $newPieces = Art::take(8)->get();
         return view('layout.home', compact('staffPicks', 'newPieces'));

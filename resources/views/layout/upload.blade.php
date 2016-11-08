@@ -28,6 +28,10 @@
                         <option value="sketches">Sketches</option>
                     </select>
                 </div>
+                <div class="small-12 columns">
+                    <h3>Description</h3>
+                    <textarea placeholder="None" rows="2" name="art-desc"></textarea>
+                </div>
             </div>
             <div class="row">
                 <div class="small-12 medium-offset-5 medium-2 columns">

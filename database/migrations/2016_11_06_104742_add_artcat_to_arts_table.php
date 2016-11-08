@@ -20,6 +20,7 @@ class AddArtcatToArtsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('art_name');
             $table->string('art_cat');
+            $table->string('art_desc')->nullable();
             $table->integer('art_endorse')->unsigned()->default(0);
             $table->timestamps();
         });

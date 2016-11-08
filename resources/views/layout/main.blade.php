@@ -67,7 +67,7 @@
 
 @yield('content')
 
-@if(Request::path() == "/")
+@if(Request::path() == "/" || Request::path() == "upload")
     <footer>
 @else
     <footer class="spaced-footer">
