@@ -23,7 +23,7 @@ class CatController extends Controller
         } else {
             return redirect(url('/'));
         }
-        $arts = Art::where('art_cat', $catUri)->get();
+        $arts = Art::where('art_cat', $catUri)->simplePaginate(24);
         $title = $category . " on Drawsquare";
         return view('layout.category', compact('title', 'category', 'arts'));
     }
