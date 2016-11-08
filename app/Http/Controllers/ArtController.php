@@ -98,8 +98,8 @@ class ArtController extends Controller
     }
     public function homeArt()
     {
-        $selected = [1,2,3,4,5,6,7,8];
-        $staffPicks = Art::where('art_id', $selected)->take(8)->get();
+        $selected = [1,2,3,4]; # selected art_id
+        $staffPicks = Art::whereIn('art_id', $selected)->get();
         $newPieces = Art::take(8)->get();
         return view('layout.home', compact('staffPicks', 'newPieces'));
     }
