@@ -9,7 +9,7 @@ h1,h2,h3,h4,h5,button,a.button,form {font-family: "Proxima Nova Bold" !important
 .top-bar a.button {
 	background: #fff;
 	color: #000;
-	margin-right: 15px;
+	margin-right: 8px;
 }
 
 .top-bar .logo {
@@ -239,6 +239,11 @@ img.art-preview {
 
 button, a.button {
 	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+a.button:hover {
+	background: #e78b00;
+	color: #fff;
 }
 
 .rounded {
