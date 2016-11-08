@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Art;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,7 +23,7 @@ class CatController extends Controller
         } else {
             return redirect(url('/'));
         }
-        $arts = \DB::table('arts')->where('art_cat', $catUri)->get();
+        $arts = Art::where('art_cat', $catUri)->get();
         $title = $category . " on Drawsquare";
         return view('layout.category', compact('title', 'category', 'arts'));
     }
