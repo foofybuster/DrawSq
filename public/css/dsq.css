@@ -202,6 +202,12 @@ p.art-desc {
 	margin: 20px 0 0;
 }
 
+h2.no-upload {
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 0 !important;
+}
+
 /* SECTION - UPLOAD */
 
 .upload-box {
@@ -358,6 +364,9 @@ a.share-tw:hover, a.share-tw:focus {
 	footer, footer h6 {
 		text-align: center !important;
 	}
+	h2.no-upload {
+		margin-top: 48px;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -416,6 +425,9 @@ a.share-tw:hover, a.share-tw:focus {
     }
 	section#timeline .thumb .art-thumb {
 		height: 160px;
+	}
+	h2.no-upload {
+		margin-top: 23px;
 	}
 }
 
