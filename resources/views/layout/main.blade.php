@@ -42,7 +42,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><img src="{{ asset('img/loggedin.jpg') }}" class="avatar hide-for-small-only"></li>
+                        <li><img src="{{ asset('img/default.svg') }}" class="avatar hide-for-small-only"></li>
                     @endif
                 </ul>
             </div>

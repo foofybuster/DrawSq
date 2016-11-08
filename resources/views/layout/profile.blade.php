@@ -2,7 +2,7 @@
 @section('content')
     <section id="profile-box">
         <h2>Profile</h2>
-        <img src="{{ asset('img/loggedin.jpg') }}"/>
+        <img src="{{ asset('img/default.svg') }}"/>
         <p><strong>{{ $nameOfUser }}</strong></p>
         <p>Joined in {{ $yearJoined }}</p>
     </section>
