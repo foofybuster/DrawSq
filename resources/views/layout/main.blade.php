@@ -20,7 +20,7 @@
             <div class="top-bar-right">
                 <ul class="dropdown menu main-nav" data-dropdown-menu>
                     @if (Auth::guest())
-                        <li><a href="{{ url('login') }}" class="white-nav">Login or Register</a></li>
+                        <li><a href="{{ url('login') }}" class="white-nav login">Login or Register</a></li>
                     @else
                         <li>
                             <a class="button rounded hide-for-small-only" href="{{ url('upload') }}">UPLOAD</a>

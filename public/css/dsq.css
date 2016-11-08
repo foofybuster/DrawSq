@@ -63,6 +63,10 @@ header a.white-nav:hover {
 	color: #e6e6e6 !important;
 }
 
+.menu > li > a.login {
+	padding: 0.7rem 0rem;
+}
+
 .discover {
 	margin-top: 50px;
 	width: 712px;
