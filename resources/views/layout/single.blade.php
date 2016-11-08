@@ -19,7 +19,15 @@
                         @endif
                     </ul>
                 </div>
-                <button type="button" class="button expanded rounded">ENDORSE NOW!</button>
+                <a class="button expanded rounded share-btn share-fb"
+                   href="http://www.facebook.com/sharer.php?u={{ Request::fullUrl() }}" target="_blank">
+                    <img src="{{ asset('img/share-fb.svg') }}"/>
+                </a>
+                <a class="button expanded rounded share-btn share-tw"
+                   href="https://twitter.com/share?url={{ Request::fullUrl() }}&amp;text=Check%20out%20this%20art%20on%20Drawsquare"
+                   target="_blank">
+                    <img src="{{ asset('img/share-tw.svg') }}"/>
+                </a>
             </div>
         </div>
     </section>
