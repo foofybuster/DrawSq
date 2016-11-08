@@ -5,11 +5,6 @@
         <img src="{{ asset('img/loggedin.jpg') }}"/>
         <p><strong>{{ $nameOfUser }}</strong></p>
         <p>Joined in {{ $yearJoined }}</p>
-        @if ($endorse > 2)
-            <p>{{ $endorse or "not found" }} endorsements</p>
-        @else
-            <p>{{ $endorse or "not found" }} endorsement</p>
-        @endif
     </section>
     <section id="timeline">
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group" id="timeline-profile">

@@ -13,11 +13,6 @@
                     <ul>
                         <li>{{ $artCreated }}</li>
                         <li><a href="{{ url('discover/' . $artCatUri) }}">{{ $artCatName }}</a></li>
-                        @if ($artEndorse < 2)
-                            <li>{{ $artEndorse }} endorsement</li>
-                        @else
-                            <li>{{ $artEndorse }} endorsements</li>
-                        @endif
                     </ul>
                 </div>
                 <a class="button expanded rounded share-btn share-fb"
