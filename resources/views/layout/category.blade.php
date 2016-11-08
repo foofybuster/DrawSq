@@ -11,7 +11,8 @@
             @foreach($arts->reverse() as $art)
                 <div class="column thumb">
                     <a href="{{ url('art/' . $art->art_id) }}">
-                        <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
+                        <div class="art-thumb"
+                             style="background-image: url('{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}');"></div>
                     </a>
                     <p>by <a href="{{ url('profile/' . $art->user->name) }}">{{ $art->user->name }}</a></p>
                 </div>

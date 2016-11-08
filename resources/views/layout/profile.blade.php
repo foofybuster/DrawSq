@@ -15,8 +15,9 @@
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group" id="timeline-profile">
             @foreach ($arts->reverse() as $art)
                 <div class="column thumb">
-                    <a href="{{ url('/art/' . $art->art_id) }}">
-                        <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
+                    <a href="{{ url('art/' . $art->art_id) }}">
+                        <div class="art-thumb"
+                             style="background-image: url('{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}');"></div>
                     </a>
                 </div>
             @endforeach

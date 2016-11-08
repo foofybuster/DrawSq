@@ -1,4 +1,4 @@
-h1,h2,h3,h4,h5,button,a.button,form {font-family: "Proxima Nova Bold" !important;}
+h1,h2,h3,h4,h5,h6,button,a.button,form {font-family: "Proxima Nova Bold" !important;}
 
 /* HEADER */
 
@@ -111,17 +111,20 @@ section#timeline h2 {
 	margin-bottom: 25px;
 }
 
-section#timeline .thumb img {
+section#timeline .thumb .art-thumb {
 	width: 100%;
+	height: 220px;
 	margin-bottom: 13px;
 	border-radius: 5px;
+	background-size: cover;
+	background-position: top;
 	box-shadow: 0 6px 10px rgba(0,0,0,0.12);
-    transition: transform 0.2s, box-shadow 0.2s;
+	transition: transform 0.2s, box-shadow 0.2s;
 }
 
-section#timeline .thumb img:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    transform: translateY(-6px);
+section#timeline .thumb .art-thumb:hover {
+	box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+	transform: translateY(-6px);
 }
 
 section#timeline .tile-group {
@@ -229,7 +232,7 @@ footer img.footer-logo {
 	width: 120px;
 }
 
-footer p {
+footer h6 {
 	margin-bottom: 0;
 	color: #fff;
 	text-align: right;
@@ -345,10 +348,16 @@ button.upload {
     .discover .menu li:last-child {
         margin-bottom: 0;
     }
+	section#timeline .thumb .art-thumb {
+		height: 160px;
+	}
 }
 
 @media screen and (max-width: 360px) {
 	.discover, .discover button, .discover .dropdown-pane {
 		width: 300px;
+	}
+	section#timeline .thumb .art-thumb {
+		height: 110px;
 	}
 }
