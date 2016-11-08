@@ -270,6 +270,26 @@ footer h6 {
 	color: #fff;
 }
 
+/* PAGINATION */
+
+.pagination {
+	text-align: center;
+}
+
+.pagination li {
+	font-size: 40px !important;
+	line-height: 1;
+}
+
+.pagination a {
+	padding: 0px 10px 5px !important;
+}
+
+.pagination a:hover {
+	background: #ffa011 !important;
+	color: #fff !important;
+}
+
 /* BUTTONS */
 
 button, a.button {

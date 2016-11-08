@@ -18,8 +18,8 @@
             @endforeach
         </div>
         <div class="row">
-            <div class="small-8 small-offset-2 medium-offset-5 medium-2 columns">
-                <button type="button" class="button expanded rounded load-more">LOAD MORE</button>
+            <div class="small-12 columns">
+                {{ $arts->links() }}
             </div>
         </div>
     </section>
