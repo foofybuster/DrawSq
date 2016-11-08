@@ -226,6 +226,11 @@ footer {
 	background: #202020;
 	padding: 50px 0;
 	bottom: 0;
+	display: flex;
+}
+
+.spaced-footer {
+	margin-top: 100px;
 }
 
 footer img.footer-logo {
@@ -295,6 +300,15 @@ button.upload {
     section#timeline .row {
         width: 90%;
     }
+	.spaced-footer {
+		margin-top: 50px;
+	}
+	footer img.footer-logo {
+		margin-bottom: 10px;
+	}
+	footer, footer h6 {
+		text-align: center !important;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -332,6 +346,9 @@ button.upload {
 	}
 	button.upload {
 		margin-top: 8px;
+	}
+	.spaced-footer {
+		margin-top: 0;
 	}
 }
 

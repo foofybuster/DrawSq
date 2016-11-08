@@ -67,7 +67,11 @@
 
 @yield('content')
 
-<footer>
+@if(Request::path() == "/")
+    <footer>
+@else
+    <footer class="spaced-footer">
+@endif
     <div class="row">
         <div class="small-12 medium-6 columns">
             <img src="{{ asset('img/logo.svg') }}" class="footer-logo" alt="Drawsquare"/>
