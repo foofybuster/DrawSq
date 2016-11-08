@@ -73,7 +73,7 @@
             <img src="{{ asset('img/logo.svg') }}" class="footer-logo" alt="Drawsquare"/>
         </div>
         <div class="small-12 medium-6 columns">
-            <p>made with ❤︎ and Laravel</p>
+            <h6>made with ❤︎ and Laravel</h6>
         </div>
     </div>
 </footer>
