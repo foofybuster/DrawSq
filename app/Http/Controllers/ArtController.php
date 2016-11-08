@@ -82,12 +82,7 @@ class ArtController extends Controller
     public function profileArt($username = null)
     {
         if ($username == null) {
-            $nameOfUser = Request::user()->name;
-            $arts = Art::where('user_id', Request::user()->id)->get();
-            $dateJoined = \DB::table('users')->where('id', Request::user()->id)->value('created_at');
-            $yearJoined = substr($dateJoined, 0, 4);
-            $endorse = \DB::table('users')->where('id', Request::user()->id)->value('endorse');
-            return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
+            return redirect(url('/'));
         } else {
             $userId = \DB::table('users')->where('name', $username)->value('id');
             if ($userId == null) {
