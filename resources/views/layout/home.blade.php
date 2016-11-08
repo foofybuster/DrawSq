@@ -59,7 +59,7 @@
                     <a href="{{ url('art/' . $art->art_id) }}">
                         <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
                     </a>
-                    <p>by {{ $art->user_id }}</p>
+                    <p>by {{ $art->user->name }}</p>
                 </div>
             @endforeach
         </div>
