@@ -8,44 +8,15 @@
             </div>
         </div>
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group">
-            <div class="column thumb">
-                <a href="#">
-                    <img src="img/art1-thumb.jpg"/>
-                    <p>by carrotfern</p>
-                </a>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column show-for-medium-only thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
+            @foreach($staffPicks->reverse() as $art)
+                <div class="column thumb">
+                    <a href="{{ url('art/' . $art->art_id) }}">
+                        <div class="art-thumb"
+                             style="background-image: url('{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}');"></div>
+                    </a>
+                    <p>by <a href="{{ url('profile/' . $art->user->name) }}">{{ $art->user->name }}</a></p>
+                </div>
+            @endforeach
         </div>
         <!-- NEW -->
         <div class="row">
@@ -54,42 +25,15 @@
             </div>
         </div>
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group">
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column show-for-medium-only thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
+            @foreach($newPieces->reverse() as $art)
+                <div class="column thumb">
+                    <a href="{{ url('art/' . $art->art_id) }}">
+                        <div class="art-thumb"
+                             style="background-image: url('{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}');"></div>
+                    </a>
+                    <p>by <a href="{{ url('profile/' . $art->user->name) }}">{{ $art->user->name }}</a></p>
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection

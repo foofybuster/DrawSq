@@ -15,12 +15,12 @@
     <div class="row">
         <div class="top-bar">
             <div class="top-bar-left">
-                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" class="logo" alt="Drawsquare"/></a>
             </div>
             <div class="top-bar-right">
                 <ul class="dropdown menu main-nav" data-dropdown-menu>
                     @if (Auth::guest())
-                        <li><a href="{{ url('login') }}" class="white-nav">Login or Register</a></li>
+                        <li><a href="{{ url('login') }}" class="white-nav login">Login or Register</a></li>
                     @else
                         <li>
                             <a class="button rounded hide-for-small-only" href="{{ url('upload') }}">UPLOAD</a>
@@ -67,6 +67,20 @@
 
 @yield('content')
 
+@if(Request::path() == "/" || Request::path() == "upload")
+    <footer>
+@else
+    <footer class="spaced-footer">
+@endif
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <img src="{{ asset('img/logo.svg') }}" class="footer-logo" alt="Drawsquare"/>
+        </div>
+        <div class="small-12 medium-6 columns">
+            <h6>made with ❤︎ and Laravel</h6>
+        </div>
+    </div>
+</footer>
 <script src={{ asset("js/vendor/jquery.js") }} type="text/javascript"></script>
 <script src={{ asset("js/vendor/what-input.js") }} type="text/javascript"></script>
 <script src={{ asset("js/vendor/foundation.min.js") }} type="text/javascript"></script>

@@ -5,6 +5,7 @@
             <div class="small-12 medium-8 columns">
                 <h2>{{ $artName }}</h2>
                 <img src="{{ $artPath }}" class="single"/>
+                <p class="art-desc">{{ $artDesc }}</p>
             </div>
             <div class="small-12 medium-4 columns">
                 <div class="art-meta">
@@ -12,14 +13,17 @@
                     <ul>
                         <li>{{ $artCreated }}</li>
                         <li><a href="{{ url('discover/' . $artCatUri) }}">{{ $artCatName }}</a></li>
-                        @if ($artEndorse < 2)
-                            <li>{{ $artEndorse }} endorsement</li>
-                        @else
-                            <li>{{ $artEndorse }} endorsements</li>
-                        @endif
                     </ul>
                 </div>
-                <button type="button" class="button expanded rounded">ENDORSE NOW!</button>
+                <a class="button expanded rounded share-btn share-fb"
+                   href="http://www.facebook.com/sharer.php?u={{ Request::fullUrl() }}" target="_blank">
+                    <img src="{{ asset('img/share-fb.svg') }}"/>
+                </a>
+                <a class="button expanded rounded share-btn share-tw"
+                   href="https://twitter.com/share?url={{ Request::fullUrl() }}&amp;text=Check%20out%20this%20art%20on%20Drawsquare"
+                   target="_blank">
+                    <img src="{{ asset('img/share-tw.svg') }}"/>
+                </a>
             </div>
         </div>
     </section>
