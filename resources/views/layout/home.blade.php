@@ -54,42 +54,14 @@
             </div>
         </div>
         <div class="row small-up-2 medium-up-3 large-up-4 tile-group">
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by foofybuster</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by panudet2000</p>
-            </div>
-            <div class="column thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by zartre</p>
-            </div>
-            <div class="column show-for-medium-only thumb">
-                <img src="img/loggedin.jpg"/>
-                <p>by whoami</p>
-            </div>
+            @foreach($newPieces->reverse() as $art)
+                <div class="column thumb">
+                    <a href="{{ url('art/' . $art->art_id) }}">
+                        <img src="{{ Storage::url('arts/' . $art->art_cat . "/" . $art->art_file) }}"/>
+                    </a>
+                    <p>by {{ $art->user->name }}</p>
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection

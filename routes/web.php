@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('layout.home');
-});
+Route::get('/', 'ArtController@homeArt');
 Route::get('category', function () {
     return view('layout.category');
 });

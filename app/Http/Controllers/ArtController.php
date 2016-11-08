@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use App\Art;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -94,5 +95,11 @@ class ArtController extends Controller
                 return view('layout.profile', compact('arts', 'nameOfUser', 'yearJoined', 'endorse'));
             }
         }
+    }
+    public function homeArt()
+    {
+        # $newPieces = \DB::table('arts')->take(8)->get();
+        $newPieces = Art::take(8)->get();
+        return view('layout.home', compact('newPieces'));
     }
 }
