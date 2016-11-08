@@ -5,6 +5,7 @@
             <div class="small-12 medium-8 columns">
                 <h2>{{ $artName }}</h2>
                 <img src="{{ $artPath }}" class="single"/>
+                <p class="art-desc">{{ $artDesc }}</p>
             </div>
             <div class="small-12 medium-4 columns">
                 <div class="art-meta">
