@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Art;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -82,7 +83,7 @@ class ArtController extends Controller
     {
         if ($username == null) {
             $nameOfUser = Request::user()->name;
-            $arts = \DB::table('arts')->where('user_id', Request::user()->id)->get();
+            $arts = Art::where('user_id', Request::user()->id)->get();
             $dateJoined = \DB::table('users')->where('id', Request::user()->id)->value('created_at');
             $yearJoined = substr($dateJoined, 0, 4);
             $endorse = \DB::table('users')->where('id', Request::user()->id)->value('endorse');
@@ -93,7 +94,7 @@ class ArtController extends Controller
                 return "User not found";
             } else {
                 $nameOfUser = \DB::table('users')->where('id', $userId)->value('name');
-                $arts = \DB::table('arts')->where('user_id', $userId)->get();
+                $arts = Art::where('user_id', $userId)->simplePaginate(8);
                 $dateJoined = \DB::table('users')->where('id', $userId)->value('created_at');
                 $yearJoined = substr($dateJoined, 0, 4);
                 $endorse = \DB::table('users')->where('id', $userId)->value('endorse');
