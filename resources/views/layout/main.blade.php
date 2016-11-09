@@ -85,7 +85,7 @@
         </div>
     </div>
 </footer>
-<script src={{ asset("js/vendor/jquery.min.js") }} type="text/javascript"></script>
+<script src={{ asset("js/vendor/jquery.js") }} type="text/javascript"></script>
 <script async src={{ asset("js/vendor/what-input.js") }} type="text/javascript"></script>
 <script async src={{ asset("js/vendor/foundation.min.js") }} type="text/javascript"></script>
 <script type="text/javascript">
