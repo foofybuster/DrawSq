@@ -36,7 +36,7 @@
                         @endif
                         <label>Username</label>
                         <input id="name" type="text" name="name" value="{{ old('name') }}"
-                               required autofocus placeholder="Username">
+                               required placeholder="Username">
                         @if ($errors->has('name'))
                             <strong>{{ $errors->first('name') }}</strong>
                         @endif
@@ -49,7 +49,7 @@
                         <label>Password Confirm</label>
                         <input id="password-confirm" type="password" name="password_confirmation" required
                                placeholder="Password Confirm">
-                        <input id="condition" type="checkbox" required>
+                        <input id="condition" type="checkbox" name="condition" required>
                         <label for="condition">I accept <a>terms and conditions</a></label>
                         <button type="submit" class="button expanded rounded">REGISTER NOW!</button>
                     </div>
