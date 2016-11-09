@@ -36,7 +36,7 @@
                         @endif
                         <label>Username</label>
                         <input id="name" type="text" name="name" value="{{ old('name') }}"
-                               required autofocus placeholder="Username">
+                               required placeholder="Username">
                         @if ($errors->has('name'))
                             <strong>{{ $errors->first('name') }}</strong>
                         @endif
