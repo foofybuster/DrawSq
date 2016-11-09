@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("css/dsq.css") }}" type="text/css"/>
     <link rel="stylesheet" href="{{ asset("css/foundation.min.css") }}" type="text/css"/>
+    @if(Request::path() == "/" || Request::path() == "upload" || Request::path() == "discover/*" || Request::path() == "profile/*")
+        <meta property="og:image" content="{{ asset('img/ogimage.jpg') }}">
+    @endif
 </head>
 <body>
 <header>
