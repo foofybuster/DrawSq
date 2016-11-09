@@ -315,6 +315,10 @@ button.upload {
 	margin-top: 25px;
 }
 
+a.share-btn:last-child {
+	margin-bottom: 0;
+}
+
 a.share-btn img {
 	height: 20px;
 }
