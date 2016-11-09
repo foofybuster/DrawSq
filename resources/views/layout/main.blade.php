@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://webfonts.fontstand.com/WF-004772-06c214436396e98a7ca60aed2c2b7cfb.css"
           type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("css/dsq.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("css/dsq.min.css") }}" type="text/css"/>
     <link rel="stylesheet" href="{{ asset("css/foundation.min.css") }}" type="text/css"/>
     @if(Request::path() == "/" || Request::path() == "upload" || Request::path() == "discover/*" || Request::path() == "profile/*")
         <meta property="og:image" content="{{ asset('img/ogimage.jpg') }}">
