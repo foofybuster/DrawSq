@@ -31,21 +31,15 @@
                         <label>E-mail</label>
                         <input id="email" type="email" name="email" value="{{ old('email') }}"
                                required placeholder="Your E-mail">
-                        @if ($errors->has('email'))
-                            <strong>{{ $errors->first('email') }}</strong>
-                        @endif
+                 
                         <label>Username</label>
                         <input id="name" type="text" name="name" value="{{ old('name') }}"
                                required placeholder="Username">
-                        @if ($errors->has('name'))
-                            <strong>{{ $errors->first('name') }}</strong>
-                        @endif
+                       
                         <label>Password</label>
                         <input id="password" type="password" name="password" required
                                placeholder="Password">
-                        @if ($errors->has('password'))
-                            <strong>{{ $errors->first('password') }}</strong>
-                        @endif
+                     
                         <label>Password Confirm</label>
                         <input id="password-confirm" type="password" name="password_confirmation" required
                                placeholder="Password Confirm">
