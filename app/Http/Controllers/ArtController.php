@@ -100,9 +100,9 @@ class ArtController extends Controller
 
     public function homeArt()
     {
-        $selected = [1, 2, 3, 4]; # selected art_id
-        $staffPicks = Art::whereIn('art_id', $selected)->get();
-        $newPieces = Art::take(8)->get();
-        return view('layout.home', compact('staffPicks', 'newPieces'));
+        # $selected = [1, 2, 3, 4]; # selected art_id
+        # $staffPicks = Art::whereIn('art_id', $selected)->get();
+        $newPieces = Art::take(16)->get();
+        return view('layout.home', compact('newPieces'));
     }
 }
