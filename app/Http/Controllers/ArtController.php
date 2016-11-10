@@ -102,7 +102,7 @@ class ArtController extends Controller
     {
         # $selected = [1, 2, 3, 4]; # selected art_id
         # $staffPicks = Art::whereIn('art_id', $selected)->get();
-        $newPieces = Art::simplePaginate(12);
+        $newPieces = Art::take(16)->get();
         return view('layout.home', compact('newPieces'));
     }
 }
