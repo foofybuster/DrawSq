@@ -26,5 +26,10 @@
                 </div>
             @endforeach
         </div>
+        <div class="row">
+            <div class="small-12 columns">
+                {{ $arts->links() }}
+            </div>
+        </div>
     </section>
 @endsection
